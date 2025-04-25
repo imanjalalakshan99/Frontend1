@@ -1,4 +1,3 @@
-import Logo from "components/Logo";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -8,22 +7,20 @@ interface Props {
 
 const NavBar = ({ children }: Props) => {
   return (
-    <nav className="bg-green-600 shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex flex-wrap items-center justify-between p-4">
+    <nav className="bg-green-300 shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto flex flex-wrap items-center justify-between py-5 px-6">
         
-        {/* Logo and Site Name */}
-        <Link to="/" reloadDocument className="flex items-center space-x-3 text-white">
-          <span className="text-2xl font-bold tracking-wide hover:text-green-100 transition">
+        {/* Site Name */}
+        <Link to="/" reloadDocument className="flex items-center space-x-3 text-green-900">
+          <span className="text-4xl font-extrabold tracking-wider hover:text-green-700 transition-all duration-300">
             TravelWithMe
           </span>
         </Link>
 
-        {/* Navigation Links */}
-        <div className="flex space-x-6 text-white text-lg">
+        {/* Navigation Links (optional children) */}
+        <div className="flex space-x-8 text-green-900 text-xl font-medium">
           {children}
         </div>
-
-    
 
       </div>
     </nav>
