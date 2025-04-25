@@ -16,7 +16,7 @@ const NavBar = ({ children }: Props) => {
           {/* Logo + Site Name */}
           <Link to="/" reloadDocument className="flex items-center text-green-950">
             <span className="text-4xl sm:text-5xl font-extrabold tracking-wider hover:text-blue-800 transition-all duration-300">
-              TravelWithMe
+              ExploreEase
             </span>
           </Link>
 
