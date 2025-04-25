@@ -20,7 +20,7 @@ const MainMap = () => {
   const [viewState, setViewState] = useState({
     longitude: 80.7718, // Center of Sri Lanka
     latitude: 7.8731,   // Center of Sri Lanka
-    zoom: 7,            // Suitable zoom level to show the island
+    zoom: 9,            // 🔍 More zoomed-in view of Sri Lanka
     padding: { top: 0, right: 0, bottom: 0, left: 0 },
   });
 
@@ -38,20 +38,20 @@ const MainMap = () => {
         : mapWidth >= 475
         ? 400
         : 0;
-    setViewState({
-      ...viewState,
+    setViewState((prev) => ({
+      ...prev,
       padding: { top: 0, right: 0, bottom: 0, left: menuWidth },
-    });
+    }));
   };
 
   useEffect(() => {
     if (focused) {
-      setViewState({
-        ...viewState,
+      setViewState((prev) => ({
+        ...prev,
         longitude: focused.location.coordinates[0],
         latitude: focused.location.coordinates[1],
-        zoom: 14,
-      });
+        zoom: 12, // 🔍 Zoom further in on selected marker
+      }));
     }
   }, [focused]);
 
