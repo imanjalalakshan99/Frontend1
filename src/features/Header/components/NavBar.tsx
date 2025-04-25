@@ -24,14 +24,7 @@ const NavBar = ({ children }: Props) => {
           {children}
         </div>
 
-        {/* Sign In Button */}
-        <div className="flex items-center">
-          <Link to="/signin">
-            <button className="bg-white text-green-600 font-semibold px-5 py-2 rounded-full hover:bg-green-100 hover:text-green-700 transition">
-              Sign In
-            </button>
-          </Link>
-        </div>
+    
 
       </div>
     </nav>
