@@ -5,7 +5,7 @@ interface Props {
 const SignInButton = ({ onClick }: Props) => {
   return (
     <li className="cursor-pointer" onClick={onClick}>
-      <div className="rounded-md border bg-white px-2 py-1 text-sm font-bold text-blue-700">
+      <div className="rounded-full border-2 border-green-600 bg-white px-4 py-2 text-base font-semibold text-green-700 transition duration-300 hover:bg-green-600 hover:text-white hover:shadow-lg">
         Sign In
       </div>
     </li>
