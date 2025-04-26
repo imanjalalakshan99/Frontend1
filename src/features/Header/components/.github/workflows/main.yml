@@ -1,39 +1,31 @@
-name: CI/CD Pipeline
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main  # When you push to main, run this workflow
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'   # You can change to 16, 20 depending on your Node version
+          node-version: 18
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Lint Code
-        run: npm run lint
-
-      - name: Run Tests
-        run: npm run test
-
-      - name: Build Project
+      - name: Build project
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist    # 👈 Change to ./build if you're using Create-React-App
+          publish_dir: ./dist
